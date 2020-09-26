@@ -1,0 +1,134 @@
+﻿@model Project.Web.Domain.Entities.Users
+
+@{
+    Layout = null;
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Registration1</title>
+    </head>
+    <body>
+        <div>
+        </div>
+    </body>
+    </html>*@
+
+
+@using (Html.BeginForm("Registration1", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Member Registration</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="page-wrapper">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="alert alert-info hidden">
+                                    <p></p>
+                                </div>
+                                <div class="well">
+                                    Please fill the details of the new candidate and complete the registration.
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Referral ID <span class="symbol required"></span></label>
+                                    <div class="col-sm-7">
+                                        @Html.TextBoxFor(m => m.ReferralId, new { @class = "form-control", @id = "ReferralId" })
+                                        <span id="Span1"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        Name <span class="symbol required"></span>
+                                    </label>
+                                    <div class="col-sm-7">
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @id = "Name" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        Password <span class="symbol required"></span>
+                                    </label>
+                                    <div class="col-sm-7">
+                                        @Html.PasswordFor(m => m.Pwd, new { @class = "form-control", @id = "Pwd" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        confirm Password <span class="symbol required"></span>
+                                    </label>
+                                    <div class="col-sm-7">
+                                        @Html.PasswordFor(m => m.ConfirmPwd, new { @class = "form-control", @id = "ConfirmPwd" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        Mobile No <span class="symbol required"></span>
+                                    </label>
+                                    <div class="col-sm-7">
+                                        @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @id = "Mobile" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        Email ID
+                                    </label>
+                                    <div class="col-sm-7">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "Email" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        Country
+                                    </label>
+                                    <div class="col-sm-7">
+                                        @Html.DropDownListFor(m => m.CountryId,
+                                            new SelectList(ViewBag.Country, "Value", "Text"),
+                                            new { @class = "form-control"})
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">
+                                        <span class="symbol required"></span>
+                                    </label>
+                                    <div class="col-sm-7">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-7" style="margin-top:10px">
+
+                                        <button type="submit" class="btn btn-success pull-right">
+                                            <i class="fa fa-floppy-o"></i>Submit
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}
+

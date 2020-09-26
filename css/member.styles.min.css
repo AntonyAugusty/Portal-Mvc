@@ -1,0 +1,77 @@
+.memdetails {
+    position: absolute;
+    background: #f0f0f0;
+    white-space: nowrap;
+    z-index: 999999;
+    width: 150px;
+    top: -80%;
+    right: 60%;
+    box-shadow: 0 0 5px #ccc;
+    padding: 0;
+    display: none;
+}
+.memdetails .list-group {
+    margin: 0
+}
+.chat-img input {
+    border: 1px solid #999;
+    padding: 0;
+}
+.chat-img {
+    cursor: pointer;
+}
+.chat-img:hover .memdetails {
+    cursor: pointer;
+    display: block;
+}
+.chat-img.last > .memdetails {
+    left: -150% !important;
+}
+.circle {
+    padding: 4px 10px;
+    border: 1px solid #999;
+    background: #fff;
+    margin-right: 5px;
+}
+.line {
+    border-bottom: 1px solid #428BCA;
+}
+.line {
+    border-bottom: 1px solid #428BCA;
+}
+.mline {
+    border-left: 1px solid #428BCA;
+    position: absolute;
+    height: 10px;
+    z-index: -0;
+    width: 1px;
+    left: 50%;
+    bottom: 0px;
+    content: " Hello";
+}
+.img-circle {
+    padding-bottom: 5px;
+}
+.mtline {
+    border-left: 1px solid #428BCA;
+    ;
+    position: absolute;
+    height: 10px;
+    width: 1px;
+    left: 50%;
+    top: 0px;
+    content: "";
+}
+.chat-img {
+    padding: 10px 0;
+}
+
+.xsline {
+		border-bottom: 1px solid #428BCA;
+}
+@media (max-width:767px){
+	.xsline 
+	{
+		border-bottom: unset;
+	}
+}

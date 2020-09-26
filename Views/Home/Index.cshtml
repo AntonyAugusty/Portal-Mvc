@@ -1,0 +1,95 @@
+﻿
+@model Project.Web.Domain.Entities.Users
+
+@{
+    Layout = null;
+    ViewBag.Title = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer Management Portal </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/css/skin-blue.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body class="hold-transition login-page" style="background: url(../../images/girl.jpg) right no-repeat #7cd0f2">
+
+    @*@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+        {*@
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <form id="frmLogin">
+
+            <div class="login-box">
+                <!-- /.login-logo -->
+                <div class="login-logo">
+                    <a href="#"><b>Welcome</b> Member</a>
+                </div>
+                <div class="login-box-body box box-info">
+                    <div class="box-header with-border">
+                        <p class="login-box-msg">
+                            <img src="~/images/logo.png" height="100" />
+                            <br>
+                            <br>Member Management Portal
+                        </p>
+                        <div class="form-group has-feedback">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @id = "UserName" })
+                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            @Html.PasswordFor(m => m.Pwd, new { @class = "form-control", @id = "userpassword" })
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <button class="btn btn-primary btn-block btn-flat" onclick="display();" (click)="UserLogin(UserName.value,userpassword.value)">Login</button>
+                        </div>
+                        @Html.ValidationSummary()
+                    </div>
+                </div>
+            </div>
+        </form>
+    }
+</body>
+</html>
+
+<script language="javascript">
+
+    function display() {
+
+        if ($("#UserName").attr("value") == "") {
+
+            alert("Please Enter your UserName.");
+
+            return false;
+
+        } else if ($("#userpassword").attr("value") == "") {
+
+            alert("Please enter UserPassword.");
+
+            return false;
+
+        }
+
+        alert("Login Successfully");
+
+        return true;
+
+    }
+
+</script>
